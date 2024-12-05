@@ -1,0 +1,12 @@
+# Define the environment
+env = Environment()
+
+# Add the include directory
+env.Append(CPPPATH=['include'])
+
+# Source files (with updated names and paths)
+init = env.Object('source/init.cpp')
+message = env.Object('source/message.cpp')
+
+# Link the main executable
+env.Program(target='main', source=['source/main.cpp', init, message])
